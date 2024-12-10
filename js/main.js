@@ -64,7 +64,5 @@ findInput.addEventListener("input", function () {
   const city = findInput.value.trim();
   if (city) {
     displayWeather(city);
-  } else {
-    alert("Please enter a city name!");
   }
 });
