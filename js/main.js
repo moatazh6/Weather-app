@@ -27,7 +27,7 @@ async function displayWeather() {
   const data = await fetchWeather(city);
 
   const { location, forecast: forecastData } = data;
-  forecastContainer.innerHTML = ""; // Clear previous data
+  forecastContainer.innerHTML = "";
 
   forecastData.forecastday.forEach((day) => {
     const dayName = new Date(day.date).toLocaleDateString("en-US", {
@@ -50,6 +50,11 @@ async function displayWeather() {
     }°C</p>
             <img src="${day.day.condition.icon}" alt="Weather Icon" />
             <p class="condition text-white">${day.day.condition.text}</p>
+            <div class="humidity">
+              <span>Humidity: ${day.day.avghumidity}%</span>
+          </div>
+          <div class="wind">
+          <span>Wind: ${day.day.maxwind_kph} km/h</span>
           </div>
         </div>
       </div>
