@@ -19,6 +19,7 @@ async function fetchWeather(city) {
     return null;
   }
 }
+console.log(`${baseURL}?key=${APIKey}&q=cairo&days=3`);
 
 // Render Weather Data
 async function displayWeather() {
@@ -51,11 +52,15 @@ async function displayWeather() {
             <img src="${day.day.condition.icon}" alt="Weather Icon" />
             <p class="condition text-white">${day.day.condition.text}</p>
             <div class="humidity">
+              <img src="images/humidity.png" alt="" width="32px" height="21px" class />
               <span>Humidity: ${day.day.avghumidity}%</span>
           </div>
           <div class="wind">
+         <img src="https://routeweather.netlify.app/images/icon-wind.png" alt="">
           <span>Wind: ${day.day.maxwind_kph} km/h</span>
           </div>
+      
+       
         </div>
       </div>
     `;
